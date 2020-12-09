@@ -1,0 +1,245 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/sprite";
+// @include sprites($spritesheet-sprites);
+
+html {
+  font-size: $base-font-size;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.2;
+  color: $mainColor;
+  font-family: $mainFont, sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: $accentColor;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd { margin: 0; }
+
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+img {
+  // max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select { font: inherit; }
+button { outline: none !important;}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { position: relative; }
+
+input,
+select,
+button { outline: none; }
+p { line-height: 21px;}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  flex: 1 0 auto;
+}
+.content-section {
+  padding: 80px 0;
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  // background-size: contain;
+  @include cover-background;
+  &--wave {
+    padding-top: 150px;
+  }
+}
+// .container {
+//  margin: 0 auto;
+//  max-width: $content;
+//  width: 100%;
+// }
+
+.hide-nav {
+  position: relative;
+  display: block;
+  margin-right: 10px;
+  width: 20px;
+  height: 10px;
+  // right: 15px;
+  // top: 18px;
+  cursor: pointer;
+  z-index: 10;
+  // @media screen and (max-width: 991px) { 
+  //    order: -1;
+  //    display: block;
+  //   }
+    
+  // @media screen and (max-width: 576px) { width: 40px; }
+
+}
+.hide-nav__line {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  // left: 10%;
+  border-radius: 5px;
+  transition: linear .3s;
+  background-color: $white;
+  &:last-child { width: 70% }
+}
+.hide-nav__line--top { top: 0px }
+.hide-nav__line--middle { top: 4px; opacity: 1 }
+.hide-nav__line--bottom { top: 8px; right: 0;}
+
+.hide-nav {
+  &.active {
+    .hide-nav__line--top {
+      top: 19px;
+      transform: rotate(45deg);
+      transition: linear .3s;
+    }
+  }
+}
+
+.hide-nav {
+  &.active {
+    .hide-nav__line--middle {
+      opacity: 0;
+      transition: linear .3s;
+    }
+  }
+}
+
+.hide-nav {
+  &.active {
+    .hide-nav__line--bottom {
+      top: 19px;
+      transform: rotate(-45deg);
+      transition: linear .3s;
+      width: 80%;
+    }
+  }
+}
+
+@import "modules/modules";
+
+.g-title-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+.g-title {
+  display: block;
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $mainFontBold;
+  span {
+    &:first-child { color: $accentColor }
+    &:last-child { color: $mainColor }
+  }
+}
+
+.g-cloud-title {
+  font-family: $mainFontBold;
+  text-transform: uppercase;
+}
+.cloud {
+  margin-right: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 27px ;
+  text-align: center;
+  // min-height: 65px;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: $mainFontBold;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url('../images/general/cloud.svg');
+}
+.rub {
+  &:after {
+    content: ' ₽';
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+.age {
+  display: block;
+  padding: 3px 4px;
+  color: $white;
+  font-size: 14px;
+  font-family: $mainFontBlack;
+  border-radius: 8px;
+  background-color: $accentColor;
+  &:after {
+    content: '+';
+    font-family: $mainFontBold;
+  }
+}
+
+.location {
+  span { 
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

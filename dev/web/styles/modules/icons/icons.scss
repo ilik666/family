@@ -1,0 +1,45 @@
+.socials {
+	display: flex;
+	align-items: center;
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		transition: all ease .2s;
+		background-color: $accentColor;
+		border: 1px solid $accentColor;
+		@include box(30px);
+		&:not(:last-child) { margin-right: 10px; }
+		&:hover {
+			border-color: $mainColor;
+			background-color: $mainColor;
+		}
+		@media screen and (max-width: 1199px) {
+			&:not(:last-child) { margin-right: 10px; }
+		}
+		
+		&:active { transform:  translateY(2px)}
+	}
+	.svg-sprite-icon {
+		fill: $white;
+		@include box(16px);
+	}
+}
+
+.phone {
+	display: inline-flex;
+	align-items: center;
+	color: $mainColor;
+	font-size: 18px;
+	font-family: $mainFontBold;
+	text-decoration: none;
+	transition: all ease .2s;
+	.icon-phone {
+		fill: $accentColor;
+		@include box(18px)
+	}
+	&:hover {
+		color: $accentColor;
+	}
+}

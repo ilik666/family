@@ -1,0 +1,44 @@
+header.header
+		
+	.header__top.container
+		a(href="/" title='Родители РФ').header__logo.logo
+			img(src="web/images/general/logo.svg", alt="Родители РФ")
+		
+		.header__location.location
+			span Консультационный центр
+			span МБДОУ «ЦРР – детский сад №138»
+		
+		a(href="tel:+74732647750").header__phone.phone
+			+icon('phone')
+			| +7 (473) 264-77-50
+
+		.header__socials.socials
+			+socials(socialsList)
+
+		.header__user
+			button
+				+icon('baby')
+				| Личный кабинет
+	
+	.header__bottom.container
+		nav.header__nav
+			.header__menu
+				.header__title-menu
+					.hide-nav
+						span.hide-nav__line.hide-nav__line--top
+						span.hide-nav__line.hide-nav__line--middle
+						span.hide-nav__line.hide-nav__line--bottom
+					span Каталог
+
+				ul.header__sub-menu
+					each item in subMenu
+						li.header__sub-item
+							a(href="#").header__sub-link=item.title
+							.header__sub-list
+								each links in item.list
+									a(href="#")=links
+
+			ul.header__list
+				each key in navList
+					li.header__item
+						a(href="#").header__link #{key}

@@ -1,0 +1,115 @@
+
+body.show-modal {
+	// padding-right: 17px;
+	  overflow: hidden;
+  }
+  // .vmodal {}
+  .vmodal.open .vmodal__overlay{
+	  width: 100%;
+	  height: 100%;
+	  overflow-x: hidden;
+	  overflow-y: auto;
+  }
+  .vmodal.open .vmodal__overlay,
+  .vmodal.open .vmodal__window {
+	  opacity: 1;
+	  z-index: 999;
+  }
+  .vmodal.hide .vmodal__overlay,
+  .vmodal.hide .vmodal__window {
+	  opacity: 1;
+	  z-index: 999;
+  }
+  .vmodal.open .vmodal__window {
+	  transform: translateY(1.75rem);
+  }
+  .vmodal.open .vmodal__overlay{
+	  background-color: rgba(0, 0, 0, .9);
+  }
+  
+  .vmodal.hide .vmodal__window {
+	  transform: translateY(-200px);
+  }
+  
+  .vmodal.hide .vmodal__overlay {
+	  background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .vmodal__window ,.vmodal__overlay {
+	  opacity: 0;
+	  z-index: -1;
+  }
+  
+  .vmodal__overlay {
+	  position: fixed;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  background-color: rgba(0, 0, 0, 0);
+	  transition: background .2s ease-in;
+  }
+  
+  .vmodal__window {
+	  padding-bottom: 15px;
+	  width: 95%;
+	  margin: 0 auto 1.75rem;
+	  background: #fff;
+	  border-radius: 5px;
+	  transform: translateY(-200px);
+	  transition: transform .2s ease-in;
+	  
+	  .g-btn {
+		width: 100%;
+		padding: 10px 45px;
+	  }
+  }
+  
+  .vmodal__header {
+	  display: flex;
+	  padding: 10px 15px;
+	  justify-content: space-between;
+	  border-bottom: 1px solid #eee;
+  }
+  .vmodal__title {
+	  font-size: 1.5rem;
+	  font-family: $mainFont;
+	  // font-weight: 500;
+	  color: $accentColor;
+  }
+  
+  .vmodal__close {
+	   font-size: 28px;
+	  cursor: pointer;
+  }
+  
+  .vmodal__body {
+	  padding: 10px 15px;
+  }
+  
+  .vmodal__body p {
+	  margin: 0 0 5px;
+  }
+  
+  .vmodal__footer {
+	  display: -webkit-flex;
+	  display: -moz-flex;
+	  display: -ms-flex;
+	  display: -o-flex;
+	  display: flex;
+	  padding: 10px 15px;
+	  border-top: 1px solid #eee;
+	  align-items: center;
+  }
+  
+  .vmodal__link {
+	display: inline-block;
+	margin-left: auto;
+	background: transparent;
+	/*text-align: right;*/
+	font-size: 14px;
+	border: none;
+	color: $mainColor;
+	box-shadow: none;
+  }
+  
