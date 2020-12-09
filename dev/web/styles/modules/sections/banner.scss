@@ -1,0 +1,12 @@
+.banner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .g-cloud-title {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,21 @@
+section.content-section
+	.container
+		h2.g-cloud-title
+			span.cloud Наши
+			span консультанты
+		
+		.swiper-container.consultants-slider
+			.swiper-wrapper
+				-for(let i = 0; i < 6; i++)
+					a(href="#").swiper-slide
+						img(src="web/images/content/comment.jpg", alt="студии")
+						span.consultants-slider__name Гончарова Наталья Николаевна
+						span.consultants-slider__info Преподаватель школы с 2001 года
+
+			.swiper-button-prev.arrow.arrow--prev
+				+icon('prev')
+			.swiper-button-next.arrow.arrow--next
+				+icon('next')
+
+		.center-block
+			button.g-btn.g-btn--animate(type='button') Запишитесь на консультацию

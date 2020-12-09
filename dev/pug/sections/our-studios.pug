@@ -1,0 +1,24 @@
+section.content-section.our-studios(style='background-image: url("web/images/general/back-light-wave.jpg")')
+	.container
+		h2.g-cloud-title
+			span.cloud Наши
+			span студии
+		
+		.swiper-container.our-studios-slider
+			.swiper-wrapper
+				-for(let i = 0; i < 4; i++)
+					.swiper-slide
+						img(src="web/images/content/studio.jpg", alt="студии")
+						.our-studios-slider__name
+							span Студия лепки и гончарного мастерства 
+							a(href="#").g-btn.g-btn--animate  Преподаватели
+
+			.swiper-button-prev.arrow.arrow--prev
+				+icon('prev')
+			.swiper-button-next.arrow.arrow--next
+				+icon('next')
+
+		.swiper-pagination.our-studios-pagination
+
+		.center-block
+			a(href="#").g-btn.g-btn--animate Другие студии

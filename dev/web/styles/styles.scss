@@ -95,13 +95,18 @@ p { line-height: 21px;}
   flex: 1 0 auto;
 }
 .content-section {
-  padding: 80px 0;
-  // background-repeat: no-repeat;
-  // background-position: center center;
-  // background-size: contain;
-  @include cover-background;
-  &--wave {
-    padding-top: 150px;
+  padding: 60px 0 60px;
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  // @include cover-background;
+  // background-size: 100% 100%;
+  &:not(:last-child) { margin-bottom: 30px }
+  &--crisis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 825px;
   }
 }
 // .container {
@@ -184,47 +189,71 @@ p { line-height: 21px;}
 .g-title {
   display: block;
   margin-bottom: 50px;
-  width: 100%;
-  text-align: center;
+  // text-align: center;
   text-transform: uppercase;
   font-family: $mainFontBold;
   span {
     &:first-child { color: $accentColor }
     &:last-child { color: $mainColor }
   }
+  &--center {
+    width: 100%;
+    text-align: center;
+  }
+  &--without-mb {
+    margin-bottom: 0;
+  }
 }
 
 .g-cloud-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 35px;
+  font-size: 32px;
   font-family: $mainFontBold;
   text-transform: uppercase;
+  &--small { font-size: 22px }
 }
 .cloud {
   margin-right: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 25px 27px ;
+  padding: 20px 40px 15px ;
   text-align: center;
   // min-height: 65px;
+  font-size: 32px;
   color: $white;
   text-transform: uppercase;
-  font-size: 32px;
   font-family: $mainFontBold;
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: top center;
   background-image: url('../images/general/cloud.svg');
+  &--small {
+    font-size: 18px;
+  }
 }
+
 .rub {
   &:after {
     content: ' ₽';
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
-
+.seconds-age {
+  margin-bottom: 15px;
+  span {
+    &:last-child { 
+      margin-left: 15px;
+      font-family: $mainFontBold;
+    }
+  }
+}
 .age {
-  display: block;
-  padding: 3px 4px;
+  display: inline-block;
+  padding: 4px 5px 3px;
   color: $white;
   font-size: 14px;
   font-family: $mainFontBlack;
@@ -236,10 +265,68 @@ p { line-height: 21px;}
   }
 }
 
+.img {
+  max-width: 100%;
+  border: 4px solid $white;
+  border-radius: 10px;
+}
+
+.center-block {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
 .location {
   span { 
     display: block;
     font-size: 14px;
     line-height: 17px;
   }
+}
+
+.swiper-pagination {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    .swiper-pagination-bullet {
+        &:not(:last-child) { margin-right: 10px }
+        @include box(15px);
+        &.swiper-pagination-bullet-active {
+            background-color: $accentColor;
+        }
+    }
+}
+.arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    background-color: $accentColor;
+    @include box(40px);
+    &--prev {
+        left: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    &--next {
+        right: 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .svg-sprite-icon {
+        fill: $white;
+        @include box(20px)
+    }
+}
+
+.contact__item {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
 }

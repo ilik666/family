@@ -1,0 +1,27 @@
+section.content-section.contacts
+	.container
+		h2.g-cloud-title
+			span.cloud Наши
+			span контакты
+		.row
+			.col-3
+				span.contact__item Общий телефон:
+				a(href="tel:+74732647750").info-icons
+					+icon('phone')
+					| +7 (473) 264-77-50
+			.col-3
+				span.contact__item Адрес:
+				p.info-icons
+					+icon('location')
+					| г. Воронеж, ул. Генерала Лизюкова, 41
+			.col-3
+				span.contact__item Наш e-mail:
+				a(href="mailto:Родители.рф@gmail.com").info-icons
+					+icon('email')
+					| Родители.рф@gmail.com
+			
+			.col-3.socials
+				span.contact__item Наши социальные сети:
+				+socials(socialsList)
+	
+	img(src="web/images/content/test-map.jpg", alt="" style='width: 100%; margin-bottom: -60px; margin-top: 25px')

@@ -1,1 +1,20 @@
 footer.footer
+	.container
+		a(href="/" title='Родители РФ').logo
+			img(src="web/images/general/logo.svg", alt="Родители РФ")
+		
+		.location
+			span Консультационный центр
+			span МБДОУ «ЦРР – детский сад №138»
+
+		.socials
+			+socials(socialsList)
+
+	.container
+		a(href="tel:+74732647750").info-icons
+			+icon('phone')
+			| +7 (473) 264-77-50
+		
+		a(href="#" target='_blank') Политика конфиденциальности
+
+		a(href="https://intrid.ru/" target='_blank').intrid made in INTRID

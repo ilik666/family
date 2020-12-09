@@ -1,0 +1,42 @@
+.our-studios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 960px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &-slider {
+        overflow-y: visible;
+        // padding-bottom: 50px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 15px 25px;
+            background-color: $white;
+            border-radius: 6px;
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            box-shadow: 0px 1px 4px rgba(31, 31, 31, 0.25);
+            &:hover {
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
+        }
+        img { max-width: 100%; margin-bottom: 10px; }
+    }
+    &-slider__name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        span {
+            font-size: 22px;
+            line-height: 30px;
+            font-family: $mainFontBold;
+        }
+        a, button {
+            flex-shrink: 0;
+        }
+    }
+}

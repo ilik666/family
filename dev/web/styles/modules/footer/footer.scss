@@ -1,0 +1,26 @@
+.footer {
+    padding: 15px 0;
+    background-color: $backBlueColor;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: flex-end;
+        &:first-child { margin-bottom: 20px; }
+    }
+    .logo { margin-right: 25px; }
+    .socials { margin-left: auto }
+    .info-icons { margin-right: auto }
+    .intrid {
+        display: inline-block;
+        flex-shrink: 0;
+        margin-left: 25px;
+        padding: 5px 12px 6px 30px;
+        font: 10pt Arial;
+        font-weight: bold;
+        color: #0F242C;
+        text-decoration: none;
+        background-image: url(../images/general/white.png);
+        background-repeat: no-repeat;
+    }
+}

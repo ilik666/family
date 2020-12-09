@@ -11,3 +11,24 @@ mixin socials(array)
 	each key in array
 		a(href="#" target='_blank' title=key).socials__link
 			+icon(key)
+
+
+mixin aboutItem(idx, n, t)
+	.col-md-3
+		.about__item
+			img(src=`web/images/general/about/about${idx}.png`, alt=t)
+			span.about__number(data-n=n) 0
+			span.about__text=t
+
+mixin additionalItem(id, txt)
+	.col-md-3
+		a(href="#").additional__item
+			img(src=`web/images/general/services/services${id}.png`, alt=txt)
+			span=txt
+
+mixin linksItem(id, txt)
+	.col-md-2
+		a(href="#").additional__item.additional__item--links
+			.additional__img
+				img(src=`web/images/content/links/link${id}.jpg`, alt=txt)
+			span=txt
