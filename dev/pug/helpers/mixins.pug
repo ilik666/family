@@ -6,12 +6,10 @@ mixin icon(name,mod)
 		svg(class="svg-sprite-icon icon-" + name)
 			use(xlink:href="web/images/sprite/symbol/sprite.svg#" + name)
 
-
 mixin socials(array)
 	each key in array
 		a(href="#" target='_blank' title=key).socials__link
 			+icon(key)
-
 
 mixin aboutItem(idx, n, t)
 	.col-md-3
@@ -32,3 +30,17 @@ mixin linksItem(id, txt)
 			.additional__img
 				img(src=`web/images/content/links/link${id}.jpg`, alt=txt)
 			span=txt
+
+mixin interesItemBtn(idx, id ,txt)
+	a.interes-category__buttons(data-toggle='tab' href=`#${id}` role='tab' aria-controls='nav-home' aria-selected='false')
+		.interes-category__img
+			img(src=`web/images/general/interest/i2-${idx}.png`, alt=txt)
+			.tick
+				+icon('tick')
+		span=txt
+
+mixin interesLink(idx, txt)
+	a(href="#" title=txt).interes-link
+		.interes-link__img
+			img(src=`web/images/general/interest/i3-${idx}.png`, alt=txt)
+		span=txt

@@ -51,7 +51,9 @@
     "yargs": "^15.3.1"
   },
   "dependencies": {
+    "fullcalendar": "^5.4.0",
     "imask": "^6.0.5",
+    "jquery-datepicker": "^1.12.3",
     "lightcase": "^2.5.0",
     "masonry-layout": "^4.2.2",
     "normalize.css": "^8.0.1",

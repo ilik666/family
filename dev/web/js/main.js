@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 			, []
 	// 		)
 	// 	})(this)
-	// };
+    // };
 	
+
+
 	function createRipple(e) {
 		const button = e.target.closest('.g-btn--animate');
 		const ripple = document.querySelectorAll(".ripple");
@@ -87,5 +89,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+    
+    const eventsList = [
+        {
+            title: 'Event1',
+            start: '2020-12-12',
+            display: 'background',
+            color: 'red',
+        },
+        {
+            title: 'Event1',
+            start: '2020-12-15',
+            display: 'background',
+            color: 'red',
+        },
+        {
+            title: 'Event1',
+            start: '2020-12-31',
+            display: 'background',
+            color: 'red',
+        },
+        {
+            title: 'Event1',
+            start: '2020-12-31',
+            display: 'background',
+            color: 'red',
+        },
+        {
+            title: 'Event1',
+            start: '2021-01-21',
+            display: 'background',
+            color: 'red',
+        },
+    ]
+
+    const calendarEl = document.getElementById('calendar');
+    
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        // initialView: 'dayGridMonth',
+        // height: '308px',
+        locale: 'ru',
+        timeZone: 'Europe/Moscow',
+        headerToolbar: {
+          start: 'prev',
+          center: 'title',
+          end: 'next'
+        },
+        progressiveEventRendering: false,
+        events: eventsList,
+        eventDidMount: function(info) {
+            const eventDate = eventsList.map( el => el.start)
+            eventDate.forEach(item => {
+                let elem = document.querySelector(`[data-date="${item}"]`)
+                elem && elem.classList.add('active')
+            })
+        }
+    });
+
+    calendar.render();
+
 
 })
