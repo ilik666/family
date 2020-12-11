@@ -126,8 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const calendarEl = document.getElementById('calendar');
     
     const calendar = new FullCalendar.Calendar(calendarEl, {
-        // initialView: 'dayGridMonth',
-        // height: '308px',
+        initialView: 'dayGridMonth',
         locale: 'ru',
         timeZone: 'Europe/Moscow',
         headerToolbar: {
@@ -143,10 +142,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 let elem = document.querySelector(`[data-date="${item}"]`)
                 elem && elem.classList.add('active')
             })
+        },
+        dateClick: function(info) {
+            const parentDate = info.dayEl
+            if(parentDate.classList.contains('active')) {
+                alert(' Данный раздел в разработке')
+            }
         }
     });
 
-    calendar.render();
+    calendar && calendar.render();
 
 
 })
