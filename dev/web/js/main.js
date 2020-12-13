@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const buttons = document.querySelectorAll('.g-btn--animate');
 	if(buttons.length) buttons.forEach( el => el.addEventListener('click', createRipple) )
     
+    const topBannerSlider = new Swiper('.top-banner-slider', {
+
+    })
+
     const studiosSlider = new Swiper('.our-studios-slider', {
         slidesPerView: 2,
         spaceBetween: 30,
@@ -121,6 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
             display: 'background',
             color: 'red',
         },
+        {
+            title: 'Event1',
+            start: '2021-02-02',
+            display: 'background',
+            color: 'red',
+        },
     ]
 
     const calendarEl = document.getElementById('calendar');
@@ -136,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         progressiveEventRendering: false,
         events: eventsList,
-        eventDidMount: function(info) {
+        eventContent: function(info) {
             const eventDate = eventsList.map( el => el.start)
             eventDate.forEach(item => {
                 let elem = document.querySelector(`[data-date="${item}"]`)

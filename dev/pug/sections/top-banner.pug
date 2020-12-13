@@ -2,7 +2,20 @@ section.top-banner
 	.container
 		.row
 			.col-8
-				span.cloud.cloud--small 31 декабря в 17:00
+				.swiper-container.top-banner-slider
+					.swiper-wrapper
+						.swiper-slide
+							.top-banner-slider__content
+								span.cloud.cloud--small 31 декабря в 17:00
+								span Мастер-класс 
+								span по лепке из глины
+								span Преподаватель школы Васенкова И.И.
+								a(href="#").g-btn  Подробнее
+							.top-banner-slider__img
+								img(src="web/images/content/top-banner.jpg", alt="Мастер-класс ")
+
+					.swiper-pagination
+
 			.col-4
 				.calendar
 					span.calendar__title Календарь событий

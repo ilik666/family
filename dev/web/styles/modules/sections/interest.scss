@@ -1,3 +1,25 @@
+.interes-section {
+    &:before,
+    &:after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        width: 80px;
+        height:  250px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &::before {
+        left: 15px;
+        background-image: url('../images/general/interes-i1.jpg');
+    }
+    &::after {
+        right: 15px;
+        background-image: url('../images/general/interes-i2.jpg');
+    }
+    
+}
 .nav {
     border-bottom: none;
 }

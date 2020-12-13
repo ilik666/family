@@ -1,4 +1,4 @@
-section.content-section
+section.content-section.interes-section
 	.container
 		h2.g-title.g-title--center
 			span Выберите 
@@ -17,39 +17,24 @@ section.content-section
 				.tick
 					+icon('tick')
 
-
 		.tab-content
-			#interes-1.tab-pane.fade(role='tabpanel')
-				nav.nav.nav-tabs.interes-category(role='tablist')
-					+interesItemBtn('1', 'item-1-1', 'Ранний возраст')
-					+interesItemBtn('2', 'item-1-2', 'Младшие дошкольники')
-					+interesItemBtn('3', 'item-1-3', 'Старшие дошкольники')
-					+interesItemBtn('4', 'item-1-4', 'Младшие школьники и подростки')
-					+interesItemBtn('5', 'item-1-5', 'Школьники')
-					+interesItemBtn('6', 'item-1-6', 'Особые дети')
+			-for(let i = 0; i < 2; i++)
+				.tab-pane.fade(role='tabpanel' id=`interes-${i + 1}`)
+					nav.nav.nav-tabs.interes-category(role='tablist')
+						+interesItemBtn('1', `item-${i + 1}-1`, 'Ранний возраст')
+						+interesItemBtn('2', `item-${i + 1}-2`, 'Младшие дошкольники')
+						+interesItemBtn('3', `item-${i + 1}-3`, 'Старшие дошкольники')
+						+interesItemBtn('4', `item-${i + 1}-4`, 'Младшие школьники и подростки')
+						+interesItemBtn('5', `item-${i + 1}-5`, 'Школьники')
+						+interesItemBtn('6', `item-${i + 1}-6`, 'Особые дети')
 
-				.tab-content
-					-for(let i = 0; i < 6; i++)
-						.tab-pane.fade.interes-category-links(role='tabpanel' id=`item-1-${i + 1}`)
-							+interesLink('1', 'Познавательное развитие')
-							+interesLink('2', 'Физическое развитие')
-							+interesLink('3', 'Художественно-эстетическое развитие')
-							+interesLink('4', 'Социально-коммуникативное развитие')
-							+interesLink('5', 'Речевое развитие')
-							+interesLink('6', 'Электронная библиотека')
-							+interesLink('7', 'Развивающие игры В.В. Воскобовича')
-
-			#interes-2.tab-pane.fade(role='tabpanel')
-				nav.nav.nav-tabs.interes-category(role='tablist')
-					+interesItemBtn('1', 'item-2-1', 'Ранний возраст')
-					+interesItemBtn('2', 'item-2-2', 'Младшие дошкольники')
-					+interesItemBtn('3', 'item-2-3', 'Старшие дошкольники')
-					+interesItemBtn('4', 'item-2-4', 'Младшие школьники и подростки')
-
-				.tab-content
-					-for(let i = 0; i < 6; i++)
-						.tab-pane.fade.interes-category-links(role='tabpanel' id=`item-2-${i + 1}`)
-							+interesLink('1', 'Познавательное развитие')
-							+interesLink('2', 'Физическое развитие')
-							+interesLink('3', 'Художественно-эстетическое развитие')
-							+interesLink('4', 'Социально-коммуникативное развитие')
+					.tab-content
+						-for(let j = 0; j < 6; j++)
+							.tab-pane.fade.interes-category-links(role='tabpanel' id=`item-${i + 1}-${j + 1}`)
+								+interesLink('1', 'Познавательное развитие')
+								+interesLink('2', 'Физическое развитие')
+								+interesLink('3', 'Художественно-эстетическое развитие')
+								+interesLink('4', 'Социально-коммуникативное развитие')
+								+interesLink('5', 'Речевое развитие')
+								+interesLink('6', 'Электронная библиотека')
+								+interesLink('7', 'Развивающие игры В.В. Воскобовича')
