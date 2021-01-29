@@ -2,7 +2,7 @@
     padding-top: 5px;
     margin-bottom: 50px;
     &__name {
-        font-size: 20px;
+        font-size: rem(20);
         font-family: $mainFontBold;
         margin-bottom: 10px;
     }
@@ -29,6 +29,14 @@
             img {
                 box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
             }
+        }
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: $mainColor;
+            text-decoration: none;
         }
     }
 }

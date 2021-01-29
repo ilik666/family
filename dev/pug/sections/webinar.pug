@@ -1,17 +1,25 @@
 section.content-section
 	.container
-		h2.g-cloud-title
+		.g-cloud-title
 			span.cloud Ближайшие
-			span вебинары и мастер-классы
+			h2 вебинары и мастер-классы
+		.swiper-container.static-slider
+			.swiper-wrapper
+				-for(let i = 0; i < 6; i++)
+					.swiper-slide
+						a(href="#").webinar__item
+							img(src="web/images/content/webinar.jpg", alt="вебинары и мастер-классы")
+							.webinar__bottom
+								span.webinar__title Мастер-класс по плетению косичек
+								span.webinar__type Преподаватель школы:
+								span.webinar__name Васенкова И.И.
+							.webinar__date
+								span 30 ноября
+								span в 16:00
+			.swiper-button-prev.arrow.arrow--prev
+				+icon('prev')
+			.swiper-button-next.arrow.arrow--next
+				+icon('next')
 
-		.row
-			-for(let i = 0; i < 4; i++)
-				.col-md-3
-					a(href="#").webinar__item
-						img(src="web/images/content/webinar.jpg", alt="вебинары и мастер-классы")
-						.webinar__bottom
-							span.webinar__title Мастер-класс по плетению косичек
-							span.webinar__type Преподаватель школы:
-							span.webinar__name Васенкова И.И.
 		.center-block
 			a(href="#").g-btn.g-btn--animate Смотреть все

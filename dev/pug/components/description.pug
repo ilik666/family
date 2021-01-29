@@ -1,0 +1,25 @@
+section.content-section
+	.container
+		.row
+			.col-md-4
+				.teacher
+					.g-cloud-title
+						span.cloud Ведущий
+						span Мастер-класса
+
+					.teacher__img
+						img(src="web/images/content/comment.jpg", alt="Василий петров")
+
+					span.teacher__name Гончарова Наталья Николаевна
+					span.teacher__status Преподаватель ведет с 2001 года
+					button(type='button').g-btn.g-btn--animate Записаться
+
+			.col-md-8
+				h2.g-title Описание мастер-класса
+				-for(let i =0; i < 4; i++)
+					p Плетеник кос освоить совершенно не сложно. Для этого нужно понять принцип каждой техники. Основная часть косичек плетется на основе французской косы, которая может иметь массу различных вариаций. На первый взгляд техника ее плетения может показаться сложной для новичков, но если понять ее принцип, то освоить ее получиться очень быстро.
+					br
+			
+			.col-12
+				.video-wrapper
+					+video('Kzz1Zh20NWY')

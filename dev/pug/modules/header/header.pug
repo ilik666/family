@@ -2,8 +2,10 @@ header.header
 		
 	.header__top.container
 		a(href="/" title='Родители РФ').header__logo.logo
-			img(src="web/images/general/logo.svg", alt="Родители РФ")
-		
+			picture
+				source(srcset='web/images/general/logo.svg' media="(min-width: 600px)")
+				img(src='web/images/general/logo-small.svg' alt='Родители РФ')
+
 		.header__location.location
 			span Консультационный центр
 			span МБДОУ «ЦРР – детский сад №138»
@@ -15,11 +17,22 @@ header.header
 		.header__socials.socials
 			+socials(socialsList)
 
-		.header__user
-			button
-				+icon('baby')
-				| Личный кабинет
-	
+		.header__buttons
+			.header__icon
+				button
+					+icon('baby')
+					| Личный кабинет
+			
+			.header__icon
+				button
+					+icon('eye')
+					| Версия для слабовидящих
+		form.search
+			.search__item
+				input(type="text" placeholder='Поиск по каталогу')
+				button
+					+icon('search')
+					
 	.header__bottom.container
 		nav.header__nav
 			.header__menu
@@ -28,17 +41,34 @@ header.header
 						span.hide-nav__line.hide-nav__line--top
 						span.hide-nav__line.hide-nav__line--middle
 						span.hide-nav__line.hide-nav__line--bottom
-					span Каталог
+					span.hide-nav__text Каталог
 
-				ul.header__sub-menu
+				.header__sub-menu
 					each item in subMenu
-						li.header__sub-item
+						.header__sub-item
 							a(href="#").header__sub-link=item.title
 							.header__sub-list
 								each links in item.list
 									a(href="#")=links
+			
+			.header__menu.header__menu--nav
+				.header__title-menu.header__title-menu--nav
+					.hide-nav
+						span.hide-nav__line.hide-nav__line--top
+						span.hide-nav__line.hide-nav__line--middle
+						span.hide-nav__line.hide-nav__line--bottom
+					span.hide-nav__text Меню
 
-			ul.header__list
-				each key in navList
-					li.header__item
-						a(href="#").header__link #{key}
+				ul.header__list
+					each key in navList
+						li.header__item
+							a(href="#").header__link #{key}
+
+					li.header__item.header__item--mobile
+						.socials
+							+socials(socialsList)
+					li.header__item.header__item--mobile
+						.location
+							span Консультационный центр
+							span МБДОУ «ЦРР – детский сад №138»
+

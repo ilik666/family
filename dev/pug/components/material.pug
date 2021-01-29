@@ -1,0 +1,24 @@
+section.content-section
+	.container
+		h2.g-title Свежие материалы
+		.swiper-container.static-slider.static-slider--arrow
+			.swiper-wrapper
+				-for(let i = 0; i < 6; i++)
+					.swiper-slide
+						.webinar__item.webinar__item--left
+							img(src="web/images/content/webinar1.jpg", alt="вебинары и мастер-классы")
+							.webinar__bottom
+								span.webinar__title Раннее развитие
+								p Период раннего детства имеет ряд качественных физиологических и псиологических особенностей.
+								span.webinar__type Автор: Преподаватель школы
+								span.webinar__name Васенкова И.И.
+
+							.webinar__link
+								span 12.12.2020
+								a(href="#") Читать...
+							span.age 3
+
+			.swiper-button-prev.arrow.arrow--prev
+				+icon('prev')
+			.swiper-button-next.arrow.arrow--next
+				+icon('next')

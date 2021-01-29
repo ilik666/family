@@ -32,7 +32,7 @@
 	display: inline-flex;
 	align-items: flex-start;
 	color: $mainColor;
-	font-size: 18px;
+	font-size: rem(18);
 	font-family: $mainFontBold;
 	text-decoration: none;
 	transition: all ease .2s;

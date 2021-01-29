@@ -1,0 +1,49 @@
+extends layout/main
+
+block variables
+	-let title = 'Страница 2'
+
+block content
+	section.top-banner
+		.container
+			ul.breadcrumbs
+				+breadcrumbs-item('Наши консультанты','#', true)
+				+breadcrumbs-item('Мастер класс по плетению косичек')
+
+			.row
+				.col-md-7.col-lg-8.top-banner-content
+					.top-banner-content__item
+						.top-banner-content__content
+							span.cloud.cloud--small 31 декабря в 17:00
+							span.top-banner-content__address
+								+icon('location')
+								| Воронеж, ул.Пятницкого, 40
+							h1.top__title МАСТЕР-КЛАСС по&nbsp;лепке из глины
+							span.top__info Преподаватель школы Васенкова И.И.
+							button(type='button').g-btn.g-btn--animate Записаться
+						.top-banner-content__img
+							img.img(src="web/images/content/slider-top.jpg", alt="Мастер-класс ")
+						
+						.top-banner-content__bottom
+							span.age 3
+							span.top-banner-content__icon
+								img(src="web/images/general/banner-icon-1.png", alt="Для тех кто растит")
+								| Для тех кто растит
+							span.top-banner-content__icon
+								img(src="web/images/general/banner-icon-2.png", alt="Для тех кто растит")
+								| Познавательное развитие
+
+				.col-md-5.col-lg-4
+					.calendar
+						span.calendar__title Календарь событий
+						#calendar
+	include components/description
+
+	//1
+	+bannerInfo('ЗАПИШИТЕСЬ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ', 'К НАШИМ СПЕЦИАЛИСТАМ', 'banner-img')
+	//2
+	+bannerInfo('на Бесплатный мастер-класс ', '20 декабря, 17:00. ул. Пятницкого д. 40', 'banner-offline')
+	//3
+	+bannerInfo('на мастер-класс ', '20 декабря, 17:00. ул. Пятницкого д. 40', 'banner-offline')
+	//4
+	+bannerInfo('Вебинар завершен', ' Доступ по ссылке:', 'banner-web', false, true)

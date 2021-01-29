@@ -12,35 +12,66 @@ mixin socials(array)
 			+icon(key)
 
 mixin aboutItem(idx, n, t)
-	.col-md-3
+	.col-6.col-md-4.col-lg-3
 		.about__item
 			img(src=`web/images/general/about/about${idx}.png`, alt=t)
 			span.about__number(data-n=n) 0
 			span.about__text=t
 
 mixin additionalItem(id, txt)
-	.col-md-3
+	.col-6.col-sm-4.col-md-3
 		a(href="#").additional__item
 			img(src=`web/images/general/services/services${id}.png`, alt=txt)
 			span=txt
 
 mixin linksItem(id, txt)
-	.col-md-2
-		a(href="#").additional__item.additional__item--links
+	.col-6.col-md-2
+		a(href="#" target='_blank').additional__item.additional__item--links
 			.additional__img
 				img(src=`web/images/content/links/link${id}.jpg`, alt=txt)
 			span=txt
 
-mixin interesItemBtn(idx, id ,txt)
-	a.interes-category__buttons(data-toggle='tab' href=`#${id}` role='tab' aria-controls='nav-home' aria-selected='false')
+mixin interesItemBtn(idx ,txt)
+	label.interes-category__buttons
+		input(type="radio" name='interes-category' value=idx)
 		.interes-category__img
 			img(src=`web/images/general/interest/i2-${idx}.png`, alt=txt)
 			.tick
 				+icon('tick')
 		span=txt
 
-mixin interesLink(idx, txt)
-	a(href="#" title=txt).interes-link
-		.interes-link__img
-			img(src=`web/images/general/interest/i3-${idx}.png`, alt=txt)
-		span=txt
+
+mixin bannerInfo(title, secondText, imgUrl, button=true, link=false)
+	section.content-section.banner(style='background-image: url("web/images/general/banner-back.jpg")')
+		.container
+			img(src=`web/images/general/banner/${imgUrl}.png`, alt=title)
+			h2.g-title.g-title--without-mb 
+				span=title
+				br
+				span=secondText 
+					if(link)
+						a(href="#") google.com
+			if(button)
+				button.g-btn.g-btn--animate(type='button') Записаться
+
+mixin breadcrumbs-item(text,href,icon=false)
+	li.breadcrumbs__item
+		if(href)
+			a.breadcrumbs__link(href=href)
+				if(icon)
+					+icon('home')
+				| #{text}
+		else
+			span.breadcrumbs__text=text
+
+
+mixin video(url)
+	.video
+		a.video__link(href=`https://youtu.be/${url}`)
+			picture
+				source(srcset=`https://i.ytimg.com/vi_webp/${url}/maxresdefault.webp` type='image/webp')
+				img.video__media(src=`https://i.ytimg.com/vi/${url}/maxresdefault.jpg` alt='1. Пилот, разборы, ответы и лайвы')
+		button.video__button(aria-label='Запустить видео')
+			svg(width='68' height='48' viewBox='0 0 68 48')
+				path.video__button-shape(d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z')
+				path.video__button-icon(d='M 45,24 27,14 27,34')

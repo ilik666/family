@@ -5,14 +5,9 @@ block variables
 
 block content
 	include sections/top-banner
-	form.search
-		.search__item
-			input(type="text" placeholder='Поиск по каталогу')
-			button
-				+icon('search')
 	include sections/counselling
 	include sections/material
-	include sections/banner
+	+bannerInfo('ЗАПИШИТЕСЬ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ', 'К НАШИМ СПЕЦИАЛИСТАМ', 'banner-img')
 	include sections/interest
 	include sections/our-studios
 	include sections/webinar

@@ -1,0 +1,78 @@
+extends layout/main
+
+block variables
+	-let title = 'Страница 3'
+
+block content
+	section.top-banner
+		.container
+			ul.breadcrumbs
+				+breadcrumbs-item('Наши консультанты','#', true)
+				+breadcrumbs-item('Студия лепки и гончарного мастерства')
+
+			.row
+				.col-md-7.col-lg-8.top-banner-content
+					.top-banner-content__item
+						.top-banner-content__content
+							h1.top__title Студия лепки и гончарного мастерства
+							span.top__info Преподаватель школы Васенкова И.И.
+							button(type='button').g-btn.g-btn--animate Записаться
+						.top-banner-content__img
+							img.img(src="web/images/content/slider-top.jpg", alt="Мастер-класс ")
+						
+						.top-banner-content__bottom
+							span.age 3
+							span.top-banner-content__icon
+								img(src="web/images/general/banner-icon-1.png", alt="Для тех кто растит")
+								| Для тех кто растит
+							span.top-banner-content__icon
+								img(src="web/images/general/banner-icon-2.png", alt="Для тех кто растит")
+								| Познавательное развитие
+
+				.col-md-5.col-lg-4
+					.calendar
+						span.calendar__title Календарь событий
+						#calendar
+	section.content-section
+		.container
+			h2.g-title Описание студии
+			.row
+				.col-12
+					-for(let i = 0; i < 3; i++)
+						p Каждый после занятия уходит с сувениром, который ученик сделал своими руками. Возможно, это новая солонка, статуэтка на столик или даже подарок для близкого человека! А если в один прекрасный день Вы еще сядете за круг рядом со своим чадом, он запомнит это, как один из лучших моментов с родителями (намного ярче, чем ветер перед телевизором).
+						br
+				.col-12
+					.swiper-container.static-slider
+						.swiper-wrapper
+							-for(let i = 0; i < 6; i++)
+								.swiper-slide
+									a(href="web/images/content/mask.jpg" data-rel="lightcase:g" title='вебинары и мастер-классы').webinar__item
+										img(src="web/images/content/mask.jpg", alt="вебинары и мастер-классы")
+
+						.swiper-button-prev.arrow.arrow--prev
+							+icon('prev')
+						.swiper-button-next.arrow.arrow--next
+							+icon('next')
+
+
+	section.content-section.additional(style='background-image: url("web/images/general/back-light-wave.jpg")')
+		.container
+			h2.g-cloud-title
+				span.cloud Преподаватели
+				span Студии
+
+			.swiper-container.consultants-slider
+				.swiper-wrapper
+					-for(let i = 0; i < 6; i++)
+						.swiper-slide
+							a(href="#")
+								img(src="web/images/content/comment.jpg", alt="студии")
+								span.consultants-slider__name Гончарова Наталья Николаевна
+								span.consultants-slider__info Преподаватель школы с 2001 года
+							button.g-btn.g-btn--animate.g-btn--without-padding(type='button') Запишитесь на консультацию
+				.swiper-button-prev.arrow.arrow--prev
+					+icon('prev')
+				.swiper-button-next.arrow.arrow--next
+					+icon('next')
+
+	include components/material

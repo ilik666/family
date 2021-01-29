@@ -31,12 +31,18 @@
         align-items: center;
         margin-top: 15px;
         span {
-            font-size: 22px;
+            font-size:rem(22);
             line-height: 30px;
             font-family: $mainFontBold;
         }
         a, button {
             flex-shrink: 0;
+        }
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+            text-align: center;
+            .g-btn { width: 100% }
+            span { margin-bottom: 15px }
         }
     }
 }

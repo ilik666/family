@@ -1,0 +1,74 @@
+extends layout/main
+
+block variables
+	-let title = 'Страница 4'
+
+block content
+	section.top-banner.top-banner--transparent
+		.container
+			ul.breadcrumbs
+				+breadcrumbs-item('Наши консультанты','#', true)
+				+breadcrumbs-item('Гринева Ирина александровна')
+
+			h1.g-title Гринева Ирина александровна
+			.row
+				.col-md-4
+					img.teacher__image(src="web/images/content/teacher1.jpg", alt="Гринева Ирина александровна", title='Гринева Ирина александровна')
+				.col-md-8
+					.teacher__list
+						span.teacher__status Старший преподаватель
+						ul
+							li
+								span Образование:
+								| высшее (ВГУ, факультет философи и психологии, отделение психологии, 2001)
+							li
+								span Повышение квалификации:
+								a(href="#") http://www.mbdou38.ru/index/perechen_dokumentov/0-18
+								.teacher__sertificate
+									each _ in Array(3)
+										a(href="web/images/content/sert.jpg" title='sert' data-rel="lightcase:g")
+											img(src="web/images/content/sert.jpg", alt="sert")
+
+							li
+								span Стаж педагогической деятельности: 
+								| 18 лет:
+							li
+								span Персональная профессиональная страница:
+								a(href="#") http://www.mbdou38.ru/index/perechen_dokumentov/0-18
+								
+						button(type='button').g-btn.g-btn--accent Записаться на консультацию
+
+	section.content-section.additional(style='background-image: url("web/images/general/back-light-wave.jpg")')
+		.container
+			.row
+				.col-lg-6
+					h2.g-title Ведущая мастер-классов
+					p Наша аудитория - родители детей от 0 до 18 лет, живущие в разных регионах страны. Мы рассчитываем, что нас будут читать молодые родители и опытные, приемные родители и родители детей с особенностями, многодетные и те, кто только ждет пополнения в семье. Наша цель - быть полезными нашим читателям. Мы поддерживаем семьи с детьми, предоставляя родителям полные разносторонние и актуальные сведения о том, каксегодня растить детей в России.
+					br
+					button(type='button').g-btn.g-btn--animate Записаться на консультацию
+				.col-lg-6
+					.video-wrapper
+						+video('Kzz1Zh20NWY')
+
+	section.content-section
+		.container
+			.swiper-container.static-slider
+				.swiper-wrapper
+					-for(let i = 0; i < 6; i++)
+						.swiper-slide
+							a(href="#").webinar__item
+								img(src="web/images/content/webinar.jpg", alt="вебинары и мастер-классы")
+								.webinar__bottom
+									span.webinar__title Мастер-класс по плетению косичек
+									span.webinar__type Преподаватель школы:
+									span.webinar__name Васенкова И.И.
+								.webinar__date
+									span 30 ноября
+									span в 16:00
+				.swiper-button-prev.arrow.arrow--prev
+					+icon('prev')
+				.swiper-button-next.arrow.arrow--next
+					+icon('next')
+
+	+bannerInfo('ЗАПИШИТЕСЬ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ', 'К НАШИМ СПЕЦИАЛИСТАМ', 'banner-img')
+	include components/material

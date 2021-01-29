@@ -7,9 +7,9 @@ window.$plugins = $plugins;
 	beforeend
 	afterend 
 */
-Element.prototype.appendPositionElem = function(position, parentElem) {
-	parentElem.insertAdjacentElement(position, this);
-}
+// Element.prototype.appendPositionElem = function(position, parentElem) {
+// 	parentElem.insertAdjacentElement(position, this);
+// }
 
 Element.prototype.appendAfter = function (element) {
 	element.parentNode.insertBefore(this, element.nextSibling)
@@ -57,7 +57,9 @@ function _createModal(options) {
 		</div>
 	`);
 	const footer = _createModalFooter(options.footerButtons);
+	
 	footer.appendAfter(modal.querySelector('[data-content]'))
+
 	document.body.appendChild(modal);
 	return modal
 }

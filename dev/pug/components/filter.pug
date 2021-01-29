@@ -1,0 +1,18 @@
+form.filter
+	.select-wrapper
+		select.custom-select
+			option(selected='') Для тех кто растет
+			option(value='1') Для тех кто растит
+
+	each _, idx in Array(2)
+		.dropdown
+			button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true')
+				span.caret Выбериете  направление
+
+			ul.dropdown-menu.checkbox-menu.allow-focus
+				each _, id in Array(3)
+					li: .custom-control.custom-checkbox
+						input.custom-control-input(type='checkbox' id=`check-${idx}-${id}`)
+						label.custom-control-label(for=`check-${idx}-${id}`) Познавательное развитие
+	
+	button(type='button').g-btn.g-btn--animate Применить

@@ -4,14 +4,36 @@
 	top: 0;
 	right: 0;
 	z-index: 20;
+	background-color: $backYellowColor;
 	&__top {
+		position: relative;
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		@media screen and (max-width: 991px) {
+			max-width: 100%;
+		}
+		@media screen and(max-width: 599px) {
+			align-items: center;
+		}
 	}
-	&__user {
+	&__logo {
+		display: block;
+		@media screen and(max-width: 991px) {
+			width: 170px;
+			img { max-width: 100% }
+		}
+		@media screen and(max-width: 599px) {
+			width: auto;
+		}
+	}
+	&__buttons {
+		margin-right: 45px;
+		@media screen and(max-width: 991px) { margin-right: 0 }
+	}
+	&__icon {
 		button, a {
 			display: flex;
 			align-items: center;
@@ -19,18 +41,123 @@
 			white-space: nowrap;
 			border: none;
 			background-color: transparent;
+			&:hover {
+				color: $accentColor;
+				.svg-sprite-icon { fill: $accentColor }
+			}
 		}
 		.svg-sprite-icon {
 			margin-right: 5px;
 			fill: $mainColor;
 			@include box(18px);
 		}
+		@media screen and (max-width: 991px) {
+			&:first-child { margin-bottom: 5px }
+		}
 	}
 	&__nav {
+		position: relative;
 		display: flex;
 		align-items: center;
 		border-top: 1px solid #EFEBDF;
 		border-bottom: 1px solid #EFEBDF;
+		.search {
+			position: relative;
+			right: initial;
+			top: initial;
+			margin-right: 10px;
+			// max-width: 60%;
+			// width: 100%;
+			flex: 1 1 auto;
+			z-index: 10;
+			input {
+				position: relative;
+				padding: 0 0 0 15px;
+				opacity: 1;
+				right: 0;
+				height: 32px;
+				width: 100%;
+				box-shadow: none;
+			}
+			button {
+				padding: 0;
+				height: 32px;
+				width: 32px;
+				box-shadow: none;
+				border-color: $white;
+				background-color: $white;
+				.svg-sprite-icon { fill: $accentColor }
+			}
+			@media screen and (max-width: 600px) {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				height: 100%;
+				right: 10px;
+				margin-right: 0;
+				box-shadow: none;
+				.search__item {
+					&:hover {
+						input {
+							width: calc(100vw - 65px) !important;
+							padding: 0 0 0 15px;
+							width: 100%;
+							opacity: 1;
+							right: 45px;
+							height: 38px;
+						}
+					}
+				}
+				input {
+					position: absolute;
+					padding: 0;
+					right: 0;
+					// width: 38px;
+					// height: 45px;
+					height: 38px;
+					transition: all ease .2s;
+					z-index: 3;
+					opacity: 0;
+					box-shadow: none;
+					border: none;
+					&:focus {
+						width: calc(100vw - 60px) !important;
+						padding: 0 0 0 15px;
+						width: 100%;
+						opacity: 1;
+						height: 38px;
+						right: 45px;
+					}
+				}
+				button {
+					position: relative;
+					// padding: 8px;
+					// height: 45px;
+					height: 38px;
+					width: 45px;
+					z-index: 2;
+					box-shadow: none;
+					border: 1px solid $accentColor;
+					background-color: $accentColor;
+					.svg-sprite-icon { fill: $white }
+				}
+			}
+		}
+		@media screen and (max-width: 991px) {
+			align-items: center;
+			.header__sub-menu {
+				background-color: $white;
+			}
+			.header__list {
+				top: 100%;
+				position: absolute;
+				align-items: flex-start;
+				justify-content: flex-start;
+				flex-direction: column;
+				background-color: $white;
+				box-shadow: 0px 0px 4px rgba(31, 31, 31, 0.25);
+			}
+		}
 	}
 	&__title-menu {
 		display: flex;
@@ -41,6 +168,13 @@
 		color: $white;
 		font-family: $mainFontBold;
 		cursor: pointer;
+		&--nav {
+			display: none;
+			@media screen and (max-width: 991px) { display: flex }
+		}
+		@media screen and (max-width: 991px) {
+			height: 45px;
+		}
 	}
 	&__sub-menu {
 		position: absolute;
@@ -53,21 +187,45 @@
 		transition: .2s;
 		background-color: $white;
 		box-shadow: 0px 0px 4px rgba(31, 31, 31, 0.25);
+		@media screen and (max-width: 991px) {
+			overflow: auto;
+			width: 50%;
+			top: initial;
+			visibility: visible;
+			opacity: 1;
+			transform: none;
+			left: -100%;
+			height: calc(100vh - 114px);
+			transition: all ease .2s;
+			&.active { left: 0 }
+		}
+		@media screen and (max-width: 767px) {
+			width: 100%;
+		}
+		@media screen and (max-width: 599px) {
+			height: calc(100vh - 132px);
+		}
 	}
 	&__sub-item {
 		padding: 10px;
 		width: 100%;
 		&:hover {
-			.header__sub-list { display: block }
-			.header__sub-link {
-				color: $accentColor;
-				text-decoration: underline;
+			@media screen and (min-width: 992px) {
+				.header__sub-list { display: block }
+				.header__sub-link {
+					color: $accentColor;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
 	&__sub-link {
 		color: $mainColor;
 		text-decoration: none;
+		@media screen and (max-width: 991px) { 
+			font-family: $mainFontBold;
+			text-decoration: underline;
+		}
 	}
 	&__sub-list {
 		position: absolute;
@@ -86,30 +244,88 @@
 			text-decoration: none;
 			&:hover { text-decoration: underline }
 		}
+		@media screen and (max-width: 991px) {
+			position: relative;
+			display: block;
+			left: initial;
+			top: initial;
+			background-color: transparent;
+			width: 100%;
+			min-width: initial;
+			column-count: 1;
+			padding: 5px 5px 0;
+			a {
+				margin-bottom: 10px;
+				color: $accentColor;
+				&:last-child { margin-bottom: 0 }
+			}
+		}
 	}
 
 	&__menu {
-		position: relative;
+		// position: relative;
 		z-index: 5;
 		background-color: $accentColor;
+		&--nav {
+			width: 100%;
+			background-color: transparent;
+		}
 		&:hover {
-			.header__sub-menu { 
-				opacity: 1;
-				visibility: visible;
-				transform: none;
-			 }
+			@media screen and (min-width: 992px) {
+				.header__sub-menu { 
+					opacity: 1;
+					visibility: visible;
+					transform: none;
+				 }
+			}
+		}
+		@media screen and (max-width: 991px) {
+			padding-right: 10px;
+			width: auto;
+			border-right: 1px solid $white;
 		}
 	}
 	&__list {
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
+		@media screen and (max-width: 991px) {
+			width: 50%;
+			height: calc(100vh - 114px);
+			left: -100%;
+			padding-top: 20px;
+			transition: all ease .2s;
+			&.active { left: 0 }
+			@media screen and (max-width: 767px) { 
+				width: 100%;
+			}
+			@media screen and (max-width: 599px) { 
+				height: calc(100vh - 132px);
+			}
+		}
+		
+		@media screen and (max-width: 767px) {
+			align-items: flex-start;
+			li { width: 100% }
+		}
 	}
 	&__item {
-		width: 14%;
 		text-align: center;
-		&:nth-child(1) { width: auto; white-space: nowrap; }
+		&:nth-child(1),
+		&:nth-child(3),
+		&:nth-child(4) { white-space: nowrap }
 		&:last-child { width: auto }
+		@media screen and (max-width: 991px) {
+			margin-bottom: 10px;
+			text-align: left;
+		}
+		&--mobile {
+			display: none;
+			padding-left: 15px;
+			@media screen and (max-width: 767px) {
+				display: block;
+			}
+		}
 	}
 	&__link {
 		display: flex;
@@ -119,11 +335,70 @@
 		padding: 0 10px;
 		color: $mainColor;
 		text-decoration: none;
-		font-size: 15px;
+		font-size:rem(15);
 		transition: .1s;
+		border-bottom: 2px solid transparent;
 		&:hover {
-			color: $white;
+			@media screen and (min-width: 992px) {
+				color: $accentColor;
+				border-color: $accentColor;
+			}
+		}
+		@media screen and (max-width: 991px) {
+			height: auto;
+			font-family: $mainFontBold;
+			font-size: 18px;
+		}
+		@media screen and (max-width: 767px) {
+			justify-content: flex-start;
+			text-align: left;
+		}
+	}
+	&__bottom {
+		@media screen and (max-width: 991px) {
+			padding: 0;
+			max-width: 100%;
 			background-color: $accentColor;
+		}
+	}
+	&__phone {
+		white-space: nowrap;
+		@media screen and (max-width: 991px) {
+			color: $white !important;
+			margin-right: 15px;
+			margin-left: 15px;
+			.svg-sprite-icon { fill: $white !important}
+		}
+		
+		@media screen and (max-width: 469px) {
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			margin-right: 60px;
+			height: 45px;
+			width: 45px;
+			margin-left: auto;
+			font-size: 0 !important;
+		}
+	}
+	@media screen and (max-width: 1199px) {
+		.header__socials {
+			display: none;
+		}
+	}
+	@media screen and (max-width: 991px) {
+		.header__socials {
+			display: flex;
+		}
+	}
+	@media screen and (max-width: 840px) {
+		.header__location {
+			display: none;
+		}
+	}
+	@media screen and (max-width: 465px) {
+		.header__socials {
+			display: none;
 		}
 	}
 }

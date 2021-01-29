@@ -1,0 +1,81 @@
+extends layout/main
+
+block variables
+	-let title = 'Личный кабинет'
+
+block content
+	section.top-banner.top-banner--transparent
+		.container
+			h1.g-title Личный кабинет
+
+			nav
+				.nav.nav-tabs(role='tablist')
+					a.g-btn.g-btn--animate.active(data-toggle='tab' href='#nav-one' role='tab' aria-controls='nav-home' aria-selected='true') Персональные данные
+					a.g-btn.g-btn--animate(data-toggle='tab' href='#nav-two' role='tab' aria-controls='nav-profile' aria-selected='false') Мастер-классы и вебинары
+					a.g-btn.g-btn--animate(data-toggle='tab' href='#nav-three' role='tab' aria-controls='nav-contact' aria-selected='false') Оставить отзыв
+
+			.tab-content
+				#nav-one.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='nav-one-tab')
+					h6.g-title-small Заполните персональные данные
+
+					form
+						.row
+							.col-md-6.col-lg-4
+								.form-group
+									input.form-control(type='text' placeholder='ФИО пользователя*')
+							.col-md-6.col-lg-4
+								.form-group
+									span Дата рождения
+									input.form-control(type='date')
+						.row
+							.col-md-6.col-lg-4
+								.form-group
+									input.form-control(type='text' placeholder='Ваш телефон*')
+							.col-md-6.col-lg-4
+								.form-group
+									input.form-control(type='tel' placeholder='Ваш e-mail*')
+
+						h6.g-title-small Заполните данные ребенка
+						
+						.row
+							.col-md-6.col-lg-4
+								.form-group
+									input.form-control(type='text' placeholder='Фамилия Имя ребенка ')
+							.col-md-6.col-lg-4
+								.form-group
+									span Дата рождения
+									input.form-control(type='date')
+							
+							//- .col-2.col-md-1
+							//- 	button.delete-child.btn ×
+						
+						button.g-btn.g-btn--animate.added(type='button') Добавить еще ребенка
+
+						
+						h6.g-title-small Смена пароля
+						.row
+							.col-md-6.col-lg-4
+								.form-group
+									input.form-control(type='text' placeholder='Новый пароль')
+							.col-md-6.col-lg-4
+								.form-group
+									input.form-control(type='tel' placeholder='Повторите новый пароль')
+
+						br
+						button(type='button').g-btn.g-btn--animate Сохранить
+						p Нажимая на кнопку "Сохранить", Вы даете согласие на обработку персональных данных
+
+				#nav-two.tab-pane.fade(role='tabpanel' aria-labelledby='nav-two-tab')
+					h6.g-title-small Предстоящие мероприятия
+					.row
+					
+					h6.g-title-small Прошедшие мероприятия
+					.row
+
+				#nav-three.tab-pane.fade(role='tabpanel' aria-labelledby='nav-thre-tab')
+					h6.g-title-small Оставить отзыв о консультационном центре
+					form
+						.form-group
+							textarea.form-control(placeholder='ФИО пользователя*' rows='6')
+						
+						button.g-btn.g-btn--animate Отправить отзыв

@@ -4,6 +4,8 @@
     padding: 15px 40px;
     color: $white;
     overflow: hidden;
+    text-align: center;
+    font-family: $mainFontBold;
     text-decoration: none;
     border-radius: 6px;
     background-color: $accentColor;
@@ -16,6 +18,12 @@
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     }
     &:active { transform:  translateY(2px) }
+    &--without-padding {
+      margin-top: 25px;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
 }
 
 span.ripple {

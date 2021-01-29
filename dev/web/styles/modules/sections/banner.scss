@@ -1,12 +1,31 @@
 .banner {
     padding-top: 30px;
     padding-bottom: 30px;
+    background-size: contain;
+    background-repeat: inherit;
     .container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        @media screen and (max-width: 1199px) { 
+            text-align: center;
+            justify-content: center;
+        }
+        @media screen and (max-width: 991px) { 
+            flex-direction: column;
+            & > *:not(:last-child) { margin-bottom: 25px; }
+        }
     }
     .g-cloud-title {
         margin-bottom: 0;
+    }
+    img { margin-right: 25px }
+    .g-btn { margin-left: auto;
+        @media screen and (max-width: 991px) { margin-left: initial }
+    }
+    .g-title {
+        span {
+            &:last-child { text-transform: none; font-size: 1.75rem }
+        }
     }
 }

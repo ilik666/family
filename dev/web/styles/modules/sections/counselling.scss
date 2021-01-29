@@ -1,12 +1,12 @@
 .counselling {
 
-	.col-md-4  {
+	.col-lg-4  {
 		margin-bottom: 30px;
 		&:first-child {
 			.counselling__item {
 				color: $mainColor;
 				justify-content: center;
-				font-size: 30px;
+				font-size: rem(30);
 				text-align: center;
 				font-family: $mainFontBold;
 				text-transform: uppercase;
@@ -39,7 +39,7 @@
 		p {
 			width: calc(100% - 110px);
 			color: $mainColor;
-			font-size: 14px;
+			font-size: rem(14);
 		}
 		&:hover {
 			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

@@ -1,0 +1,26 @@
+extends layout/main
+
+block variables
+	-let title = 'Страница 5'
+
+block content
+	section.top-banner.top-banner--transparent
+		.container
+			ul.breadcrumbs
+				+breadcrumbs-item('Домой', '#', true)
+				+breadcrumbs-item('Раздел какой-то')
+
+			h1.g-title Познавательное развитие
+			include components/filter
+			.row
+				each _ in Array(6)
+					.col-sm-6.col-md-4.col-lg-3
+						a(href="#").webinar__item
+							img(src="web/images/content/webinar.jpg", alt="вебинары и мастер-классы")
+							.webinar__bottom
+								span.webinar__title Мастер-класс по плетению косичек
+								span.webinar__type Преподаватель школы:
+								span.webinar__name Васенкова И.И.
+							.webinar__date
+								span 30 ноября
+								span в 16:00
